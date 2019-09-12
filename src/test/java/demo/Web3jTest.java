@@ -13,9 +13,10 @@ import org.web3j.utils.Numeric;
 
 public class Web3jTest {
 
-  String firstTryOrderSample = getStringResource("order.json");
+  private final String firstTryOrderSample;
 
   public Web3jTest() throws IOException, URISyntaxException {
+   firstTryOrderSample = getStringResource("order.json");
   }
 
   private String getStringResource(String name) throws URISyntaxException, IOException {
