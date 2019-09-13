@@ -2,13 +2,13 @@ package demo;
 
 import static org.junit.Assert.assertEquals;
 
+import demo.web3j.crypto.StructuredDataEncoder;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.xml.bind.ValidationException;
 import org.junit.Test;
-import org.web3j.crypto.StructuredDataEncoder;
 import org.web3j.utils.Numeric;
 
 public class Web3jTest {
