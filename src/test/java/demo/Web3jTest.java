@@ -16,7 +16,7 @@ public class Web3jTest {
   private final String firstTryOrderSample;
 
   public Web3jTest() throws IOException, URISyntaxException {
-   firstTryOrderSample = getStringResource("order.json");
+    firstTryOrderSample = getStringResource("order.json");
   }
 
   private String getStringResource(String name) throws URISyntaxException, IOException {
@@ -31,7 +31,7 @@ public class Web3jTest {
   }
 
   @Test
-  public void first_try_web3j_should_subscribe_properly() throws IOException, ValidationException {
+  public void first_try_web3j_should_subscribe_properly() throws IOException {
     byte[] messageHash = new StructuredDataEncoder(firstTryOrderSample).hashStructuredData();
 
     String expectedHash = "0xccb29124860915763e8cd9257da1260abc7df668fde282272587d84b594f37f6";
