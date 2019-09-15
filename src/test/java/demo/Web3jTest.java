@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import javax.xml.bind.ValidationException;
 import org.junit.Test;
 import org.web3j.utils.Numeric;
 

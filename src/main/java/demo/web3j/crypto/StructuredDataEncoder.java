@@ -250,15 +250,15 @@ public class StructuredDataEncoder {
                 encTypes.add("bytes32");
                 byte[] hashedValue = Numeric.hexStringToByteArray(sha3String((String) value));
                 encValues.add(hashedValue);
-            } else if (bytesTypePattern.matcher(field.getType()).find()) {
-                //TODO!!! complete and verify types encoding with eip 712 spec
-                throw new UnsupportedOperationException();
             } else if (types.containsKey(field.getType())) {
                 // User Defined Type
                 byte[] hashedValue =
                         sha3(encodeData(field.getType(), (HashMap<String, Object>) value));
                 encTypes.add("bytes32");
                 encValues.add(hashedValue);
+            } else if (bytesTypePattern.matcher(field.getType()).find()) {
+                encTypes.add(field.getType());
+                encValues.add(Numeric.hexStringToByteArray((String)value));
             } else if (arrayTypePattern.matcher(field.getType()).find()) {
                 String baseTypeName = field.getType().substring(0, field.getType().indexOf('['));
                 List<Integer> expectedDimensions =

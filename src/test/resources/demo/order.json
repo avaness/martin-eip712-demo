@@ -3,7 +3,6 @@
     "EIP712Domain": [
       {"name": "name", "type": "string"},
       {"name": "version", "type": "string"},
-      {"name": "chainId", "type": "uint256"},
       {"name": "verifyingContract", "type": "address"}
     ],
     "Order": [
@@ -25,7 +24,6 @@
   "domain": {
     "name": "0x Protocol",
     "version": "2",
-    "chainId": 0,
     "verifyingContract": "0x12459c951127e0c374ff9105dda097662a027093"
   },
   "message": {
