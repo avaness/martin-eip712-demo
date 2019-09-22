@@ -245,11 +245,14 @@ public class StructuredDataEncoder {
         for (StructuredData.Entry field : types.get(primaryType)) {
             Object value = data.get(field.getName());
 
-            if (field.getType().equals("string") || field.getType().equals("bytes")) {
+            if (field.getType().equals("string")) {
                 //TODO verify bytes type encoding to conform to eip 712 spec
                 encTypes.add("bytes32");
                 byte[] hashedValue = Numeric.hexStringToByteArray(sha3String((String) value));
                 encValues.add(hashedValue);
+            } else if (field.getType().equals("bytes")) {
+                encTypes.add(("bytes32"));
+                encValues.add(sha3(Numeric.hexStringToByteArray((String)value)));
             } else if (types.containsKey(field.getType())) {
                 // User Defined Type
                 byte[] hashedValue =
@@ -363,7 +366,11 @@ public class StructuredDataEncoder {
         HashMap<String, Object> data =
                 oMapper.convertValue(jsonMessageObject.getDomain(), HashMap.class);
 
-        data.put("chainId", ((HashMap<String, Object>) data.get("chainId")).get("value"));
+        if (data.get("chainId") != null) {
+            data.put("chainId", ((HashMap<String, Object>) data.get("chainId")).get("value"));
+        } else {
+          data.remove("chainId");
+        }
         data.put(
                 "verifyingContract",
                 ((HashMap<String, Object>) data.get("verifyingContract")).get("value"));

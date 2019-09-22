@@ -17,8 +17,8 @@
       { "name": "expirationTimeSeconds", "type": "uint256" },
       { "name": "salt", "type": "uint256" },
       { "name": "makerAssetData", "type": "bytes" },
-      { "name": "makerAssetData", "type": "bytes" }
-    ]
+      { "name": "takerAssetData", "type": "bytes" }
+  	]
   },
   "primaryType": "Order",
   "domain": {
@@ -39,5 +39,5 @@
     "salt": 1532559225,
     "makerAssetData": "0xf47261b0000000000000000000000000e41d2489571d322189246dafa5ebde1f4699f498",
     "takerAssetData": "0x02571792000000000000000000000000371b13d97f4bf77d724e78c16b7dc74099f40e840000000000000000000000000000000000000000000000000000000000000063"
-  }
+   }
 }

@@ -10,11 +10,11 @@ import java.nio.file.Paths;
 import org.junit.Test;
 import org.web3j.utils.Numeric;
 
-public class Web3jTest {
+public class Protocol0xTest {
 
   private final String firstTryOrderSample;
 
-  public Web3jTest() throws IOException, URISyntaxException {
+  public Protocol0xTest() throws IOException, URISyntaxException {
     firstTryOrderSample = getStringResource("order.json");
   }
 
