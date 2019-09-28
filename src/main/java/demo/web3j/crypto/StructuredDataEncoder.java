@@ -49,7 +49,7 @@ public class StructuredDataEncoder {
     final String arrayTypeRegex = "^([a-zA-Z_$][a-zA-Z_$0-9]*)((\\[([1-9]\\d*)?\\])+)$";
     final Pattern arrayTypePattern = Pattern.compile(arrayTypeRegex);
 
-    final String bytesTypeRegex = "^bytes?[0-9]?[0-9]$";
+    final String bytesTypeRegex = "^bytes[0-9][0-9]?$";
     final Pattern bytesTypePattern = Pattern.compile(bytesTypeRegex);
 
     // This regex tries to extract the dimensions from the
